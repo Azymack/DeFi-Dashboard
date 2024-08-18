@@ -1,0 +1,15 @@
+- name: push-data
+  webhook: '{{EXPRESS_API_URL}}/push-data'
+  schedule: '* * * * *'
+  include_in_metadata: true
+  payload: {}
+  comment: ""
+  request_transform:
+    method: GET
+    query_params: {}
+    request_headers:
+      add_headers: {}
+      remove_headers:
+        - content-type
+    template_engine: Kriti
+    version: 2
