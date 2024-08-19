@@ -10,6 +10,9 @@ As a reminder, here are a few things we’re paying special attention to when lo
 3. Effortless use of RESTful and GQL APIs
 4. 5+ YoE and ability to make informed+opinionated technical design decisions
 
+## Timeline
+You have 3 days to complete this task from the time you receive the assignment.
+
 ## Instructions
 Using NextJS 14 and Radix UI (alongside Tailwind CSS), you will be implementing the:
 1. Badges Section
@@ -29,7 +32,8 @@ You will be responsible for creating the:
 3. Community Badge Section
 
 #### Requirements
-The badges are not being dynamically pulled as of yet, so you can hardcode the data for now.
+The badges are not being dynamically pulled as of yet, so you can hardcode the data for all the badges for now.
+This includes downloading the images from the figma for the badges.
 
 The carousel should be navigated by either clicking the buttons on the side, by clicking on the badge in the carousel, or by swiping.
 
@@ -38,7 +42,6 @@ If a badge in the community badges section is clicked, then the carousel should 
 If a user holds a badge, then that badge should be highlighted with a border.
 
 The navbar + footer don't necessarily need to have correct linking, but you should implement the design as closely as possible.
-
 
 ### Last Activities Section
 You will be using the Hasura GraphQL API to fetch the data for the badges and last activities sections.
