@@ -1,0 +1,8 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE OR REPLACE FUNCTION notify_update() RETURNS trigger AS $$
+-- BEGIN
+--   PERFORM pg_notify('data_update', row_to_json(NEW)::text);
+--   RETURN NEW;
+-- END;
+-- $$ LANGUAGE plpgsql;

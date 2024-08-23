@@ -1,1 +1,11 @@
-{}
+{
+  "name": "tech-assessment",
+  "version": "1.0.0",
+  "description": "Congrats on making it to the technical assessment!\r This is a fully self-contained fullstack project with a Hasura GraphQL backend, a Node.js Express server, a Postgres DB, and a Nextjs + RadixUI frontend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,25 +1,33 @@
-import express from 'express';
-import { Pool } from 'pg';
+import express from "express";
+import { Pool } from "pg";
+
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
 
 const generateFakeTransactionHash = (): string => {
-  return '0x' + Array.from({ length: 64 }, () =>
-    Math.floor(Math.random() * 16).toString(16)
-  ).join('');
-}
+  return (
+    "0x" +
+    Array.from({ length: 64 }, () =>
+      Math.floor(Math.random() * 16).toString(16)
+    ).join("")
+  );
+};
 
 const generateFakeMethod = (): string => {
-  const methods = ['mint', 'burn', 'swap'];
+  const methods = ["mint", "burn", "swap"];
   return methods[Math.floor(Math.random() * methods.length)];
-}
+};
 
 const generateFakeAddress = (): string => {
-  return '0x' + Array.from({ length: 40 }, () =>
-    Math.floor(Math.random() * 16).toString(16)
-  ).join('');
-}
+  return (
+    "0x" +
+    Array.from({ length: 40 }, () =>
+      Math.floor(Math.random() * 16).toString(16)
+    ).join("")
+  );
+};
 
 const generateFakeDecoded = (): any => {
   const isSwapIn0 = Math.random() < 0.5;
@@ -33,10 +41,10 @@ const generateFakeDecoded = (): any => {
     amount0Out: isSwapIn0 ? "0" : amountOut,
     amount1Out: isSwapIn0 ? amountOut : "0",
   };
-}
+};
 
 const pool = new Pool({
-  connectionString: process.env.PG_DATABASE_URL
+  connectionString: process.env.PG_DATABASE_URL,
 });
 
 let lastBlockNumber = Math.floor(Math.random() * 1000000);
@@ -45,7 +53,7 @@ const generateNextBlockNumber = (): number => {
   const increment = Math.floor(Math.random() * 10) + 1; // Random increment between 1 and 10
   lastBlockNumber += increment;
   return lastBlockNumber;
-}
+};
 
 const insertRandomLog = async () => {
   const client = await pool.connect();
@@ -61,7 +69,7 @@ const insertRandomLog = async () => {
       generateNextBlockNumber(),
       new Date().toISOString(),
       generateFakeAddress(),
-      generateFakeAddress()
+      generateFakeAddress(),
     ];
 
     await client.query(query, values);
@@ -72,7 +80,7 @@ const insertRandomLog = async () => {
   } finally {
     client.release();
   }
-}
+};
 
 app.use(express.json());
 
@@ -84,6 +92,10 @@ app.get("/push-data", async (req, res) => {
     console.error("Error in /push-data:", error);
     res.status(500).json({ error: "Internal server error" });
   }
+});
+
+app.get("/", async (req, res) => {
+  res.status(200).json("Hello");
 });
 
 app.listen(port, () => {
