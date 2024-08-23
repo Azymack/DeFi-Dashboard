@@ -5,6 +5,7 @@ import clsx from "clsx";
 interface CustomLeftArrowProps extends ArrowProps {
   type: string;
   action: () => void;
+  onClick: () => void;
 }
 
 const CarouselBtn = ({
@@ -22,6 +23,7 @@ const CarouselBtn = ({
       )}
       onClick={() => {
         action();
+        onClick();
       }}
     >
       {type === "prev" ? (

@@ -1,6 +1,5 @@
 import { Badge } from "@radix-ui/themes";
 import ActionDetail from "./action-detail";
-import clsx from "clsx";
 
 export default function BadgeDetail() {
   return (
