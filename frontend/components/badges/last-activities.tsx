@@ -3,8 +3,8 @@ import { useQuery, useSubscription } from "@apollo/client";
 import { ExternalLinkIcon, MoveIcon, WidthIcon } from "@radix-ui/react-icons";
 import { Badge } from "@radix-ui/themes";
 import clsx from "clsx";
-import { DATA_UPDATE_SUBSCRIPTION } from "../../gql/subscriptions";
-import { GET_LAST_ACTIVITIES } from "../../gql/queries";
+import { DATA_UPDATE_SUBSCRIPTION } from "./../../gql/subscriptions";
+import { GET_LAST_ACTIVITIES } from "./../../gql/queries";
 import { useState } from "react";
 import Skeleton from "../utils/Skeleton";
 
@@ -32,6 +32,7 @@ interface DataUpdateResponse {
 export default function LastActivities() {
   const [lastActivities, setLastActivities] = useState<Activity[]>([]);
   const [isDataUpdated, setIsDataUpdated] = useState<boolean>(false);
+
   const { loading } = useQuery<LastActivitiesResponse>(GET_LAST_ACTIVITIES, {
     onCompleted(data) {
       console.log("fetched last activities");

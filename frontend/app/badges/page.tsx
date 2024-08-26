@@ -1,5 +1,5 @@
-import Badges from "../ui/badges/badges";
-import LastActivities from "../ui/badges/last-activities";
+import Badges from "../../components/badges/badges";
+import LastActivities from "../../components/badges/last-activities";
 
 export default function Page() {
   return (

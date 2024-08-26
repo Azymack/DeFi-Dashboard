@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { CaretLeftIcon, CaretRightIcon } from "@radix-ui/react-icons";
-import clsx from "clsx";
-import Carousel, { ArrowProps } from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselBtn from "./carousel-btn";
 import CarouselBadge from "./carousel-badge";
@@ -11,12 +9,6 @@ import {
   mainBadgeArr,
   mainBadgeCarouselResponsive,
 } from "../../../lib/constants";
-
-interface Badge {
-  id: number;
-  label: string;
-  img: string;
-}
 
 const MainCarousel: React.FC = () => {
   const componentRef = useRef<HTMLDivElement>(null);
@@ -76,10 +68,18 @@ const MainCarousel: React.FC = () => {
           arrows
           additionalTransfrom={width < 1024 ? 0 : Math.floor(width / 2) - 125}
           customLeftArrow={
-            <CarouselBtn type="prev" action={() => handleCurrentIndex(-1)} />
+            <CarouselBtn
+              type="prev"
+              action={() => handleCurrentIndex(-1)}
+              onClick={() => {}}
+            />
           }
           customRightArrow={
-            <CarouselBtn type="next" action={() => handleCurrentIndex(1)} />
+            <CarouselBtn
+              type="next"
+              action={() => handleCurrentIndex(1)}
+              onClick={() => {}}
+            />
           }
         >
           {mainBadgeArr.map((item, index) => (

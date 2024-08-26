@@ -1,12 +1,12 @@
 "use client";
-import { useState, useRef, useCallback, MouseEvent, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { CommunityBadge } from "./community-badge";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {
   communityBadgeArr,
   communityBadgeCarouselResponsive,
-} from "../../../lib/constants";
+} from "./../../../lib/constants";
 
 // Carousel component
 const CommunityBadges: React.FC = () => {
