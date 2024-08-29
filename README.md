@@ -1,4 +1,4 @@
-# Absinthe Technical Assessment 
+# Technical Assessment 
 
 ## Overview
 Congrats on making it to the technical assessment!
@@ -17,9 +17,6 @@ You have 3 days to complete this task from the time you receive the assignment.
 Using NextJS 14 and Radix UI (alongside Tailwind CSS), you will be implementing the:
 1. Badges Section
 2. Last Activities Section
-
-You can find the [figma reference here](https://www.figma.com/design/8ZSGcdV5SUpgqY8EfeMasn/Test-Task---Absinthe?node-id=84-566&m=dev&t=SuZxx4NMKMTmrJhC-1).
-Once you get to the file, you should request access from us which will automatically grant you 3 days of figma-dev access to the file.
 
 ![image](task.png)
 
